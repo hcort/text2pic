@@ -5,6 +5,7 @@ Usage:
 Send a JSON object via POST to /text2pic 
 
 JSON example
+```
 data = {
 	'text': 'The (plain) text to put into images',
 	'width': 800,
@@ -14,6 +15,7 @@ data = {
 	'font': 'arial.ttf',
 	'font-size': 32
 }
+```
 
 Width and height represent the size (in pixels) of the output images.
 The margin attributes tell the algorithm to leave a margin (in pixels) and 
@@ -26,31 +28,38 @@ The others are optionals with the following default values:
 	'font': 'arial.ttf',
 	'font-size': 32
 
-  <----------------- WIDTH ----------------------->
-  <-m_w->                                   <-m_w->
-^^                                                 ^^
-||                                                 ||
-|m                                                 m|
-|h                                                 h|
-||                                                 ||
-|v       ___________________________________       v|
-|        |AAAAAAAA AAAAAAAAAAAA AAAAAAAAA  A|       |
-H        |AAA BBBBBBB BBBBBBBBBBBBBBB bbb b |       | 
-E        |AAAAA AAAAAAAAA AAAAAAAAA a BBBBBB|       |
-I        |C CCCCCCC CCC...                  |       |
-G        |                                  |       |
-H        |                                  |       |
-T        |                                  |       |
-|        |__________________________________|       |
-|^                                                 ^|        
-||                                                 ||
-|m                                                 m|
-|h                                                 h|
-||                                                 ||
-vv                                                 vv
-  <----------------- WIDTH ----------------------->
-  <-m_w->                                   <-m_w->
-  
+
+```
+<br>
+<p>
+  <----------------- WIDTH -----------------------><br>
+  <-m_w->                                   <-m_w-><br>
+^^                                                 ^^<br>
+||                                                 ||<br>
+|m                                                 m|<br>
+|h                                                 h|<br>
+||                                                 ||<br>
+|v       ___________________________________       v|<br>
+|        |AAAAAAAA AAAAAAAAAAAA AAAAAAAAA  A|       |<br>
+H        |AAA BBBBBBB BBBBBBBBBBBBBBB bbb b |       |<br>
+E        |AAAAA AAAAAAAAA AAAAAAAAA a BBBBBB|       |<br>
+I        |C CCCCCCC CCC...                  |       |<br>
+G        |                                  |       |<br>
+H        |                                  |       |<br>
+T        |                                  |       |<br>
+|        |__________________________________|       |<br>
+|^                                                 ^|<br>
+||                                                 ||<br>
+|m                                                 m|<br>
+|h                                                 h|<br>
+||                                                 ||<br>
+vv                                                 vv<br>
+  <----------------- WIDTH -----------------------><br>
+  <-m_w->                                   <-m_w-><br>
+<br>
+</p>
+```
+
 The algorithm will try to split the text in lines that will fit
 in the inner box between margins and then put each line into 
 the image. If all the lines don´t fit into a single image it 
