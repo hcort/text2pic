@@ -27,5 +27,5 @@ def scheduled_task():
                 #print('\tolder than 5 minutes, deleting...')
                 os.remove(os.path.join(folder_path, file))
                 deleted_files += 1
-    print('Scheduled task to remove old images: %s' + datetime.now() + '. ' + deleted_files
+    print('Scheduled task to remove old images: %s' + str(datetime.datetime.now()) + '. ' + deleted_files
           + ' files deleted out of ' + total_files)
