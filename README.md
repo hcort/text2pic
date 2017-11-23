@@ -23,41 +23,43 @@ print text only in the inner box.
 
 text, width and height parameters are mandatory.
 The others are optionals with the following default values:
+```
 	'margin-width': 0,
 	'margin-height': 0,
 	'font': 'arial.ttf',
 	'font-size': 32
+```
 
 
 ```
-<br>
-<p>
-  <----------------- WIDTH -----------------------><br>
-  <-m_w->                                   <-m_w-><br>
-^^                                                 ^^<br>
-||                                                 ||<br>
-|m                                                 m|<br>
-|h                                                 h|<br>
-||                                                 ||<br>
-|v       ___________________________________       v|<br>
-|        |AAAAAAAA AAAAAAAAAAAA AAAAAAAAA  A|       |<br>
-H        |AAA BBBBBBB BBBBBBBBBBBBBBB bbb b |       |<br>
-E        |AAAAA AAAAAAAAA AAAAAAAAA a BBBBBB|       |<br>
-I        |C CCCCCCC CCC...                  |       |<br>
-G        |                                  |       |<br>
-H        |                                  |       |<br>
-T        |                                  |       |<br>
-|        |__________________________________|       |<br>
-|^                                                 ^|<br>
-||                                                 ||<br>
-|m                                                 m|<br>
-|h                                                 h|<br>
-||                                                 ||<br>
-vv                                                 vv<br>
-  <----------------- WIDTH -----------------------><br>
-  <-m_w->                                   <-m_w-><br>
-<br>
-</p>
+
+
+  <----------------- WIDTH ----------------------->
+  <-m_w->                                   <-m_w->
+^^                                                 ^^
+||                                                 ||
+|m                                                 m|
+|h                                                 h|
+||                                                 ||
+|v       ___________________________________       v|
+|        |AAAAAAAA AAAAAAAAAAAA AAAAAAAAA  A|       |
+H        |AAA BBBBBBB BBBBBBBBBBBBBBB bbb b |       |
+E        |AAAAA AAAAAAAAA AAAAAAAAA a BBBBBB|       |
+I        |C CCCCCCC CCC...                  |       |
+G        |                                  |       |
+H        |                                  |       |
+T        |                                  |       |
+|        |__________________________________|       |
+|^                                                 ^|
+||                                                 ||
+|m                                                 m|
+|h                                                 h|
+||                                                 ||
+vv                                                 vv
+  <----------------- WIDTH ----------------------->
+  <-m_w->                                   <-m_w->
+
+
 ```
 
 The algorithm will try to split the text in lines that will fit
