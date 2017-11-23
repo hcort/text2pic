@@ -6,6 +6,7 @@ import os
 import re
 import time
 from PIL import Image, ImageDraw, ImageFont
+from flask import url_for, app
 
 
 def fill_lines(words, max_len_width, image_draw, font, space_width):
@@ -36,8 +37,8 @@ def fill_lines(words, max_len_width, image_draw, font, space_width):
 def save_file(image_draw):
     # create unique file name
     filename = str(time.time()) + '.png'
-    filename = os.path.join('static', filename)
-    image_draw.save(filename)
+    fullname = os.path.join('static', filename)
+    image_draw.save(fullname)
     return filename
 
 
@@ -61,8 +62,7 @@ def split_text(text, width, height, h_margin, w_margin, font, font_size):
         if start_px > end_px:
             # save this image to file
             filename = save_file(img)
-            print(filename)
-            json_object.append({'filename': filename})
+            json_object.append({'filename': url_for('static',filename=filename)})
             # create a new one
             img = Image.new('RGB', (width, height))
             image_draw = ImageDraw.Draw(img)
@@ -70,6 +70,5 @@ def split_text(text, width, height, h_margin, w_margin, font, font_size):
     # save last image
     if start_px > h_margin:
         filename = save_file(img)
-        print(filename)
-        json_object.append({'filename': filename})
+        json_object.append({'filename': url_for('static',filename=filename)})
     return json_object

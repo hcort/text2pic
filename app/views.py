@@ -12,7 +12,6 @@ def text2picture():
     # take text and image size and create
     # a black image with the text in it
     params = request.get_json()
-    print(type(params))
     assert isinstance(params, dict)
     try:
         text = params["text"]
@@ -32,7 +31,6 @@ def text2picture():
 @app.route('/test', methods=['GET', 'POST'])
 def test_form():
     form = TestForm(request.form)
-    print('hello')
     # if request.method == 'POST':
     if form.validate_on_submit():
         text = request.form['text']
