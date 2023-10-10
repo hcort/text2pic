@@ -70,7 +70,7 @@ def text2picturezip():
         else:
             params = request.get_json()
             assert isinstance(params, dict)
-            text = params["text"]
+            text = params["text"].encode('utf-8', 'ignore').decode('utf-8', 'ignore')
             height = params["height"]
             width = params["width"]
             h_margin = params.get("margin-height", 0)

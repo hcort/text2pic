@@ -53,7 +53,7 @@ def split_text(folder, text, width, height, h_margin, w_margin, font, font_size)
     img = Image.new('RGB', (width, height))
     image_draw = ImageDraw.Draw(img)
     try:
-        img_font = ImageFont.truetype(font, font_size)
+        img_font = ImageFont.truetype(font, font_size, encoding="utf-8")
     except Exception as err:
         img_font = ImageFont.load_default()
     # image_draw.textsize(text=' ', font=img_font)
